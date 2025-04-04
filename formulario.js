@@ -46,6 +46,54 @@ function isValidState(state) {
 }
 
 // Função para realizar validações
-function validarEGuardarFormulario(evento) {
-  evento.preventDefault();
+function validarEGuardarFormulario(event) {
+  event.preventDefault();
+
+  const nome = document.getElementById("nome").value.trim(); // responsável por retirar o espaço no começo e no fim da string
+  const cpf = document.getElementById("cpf").value.trim();
+  const telefone = document.getElementById("telefone").value.trim();
+  const cep = document.getElementById("cep").value.trim();
+  const rua = document.getElementById("rua").value.trim();
+  const numero = document.getElementById("numero").value.trim();
+  const complemento = document.getElementById("complemento").value.trim();
+  const bairro = document.getElementById("bairro").value.trim();
+  const cidade = document.getElementById("cidade").value.trim();
+  const estado = document.getElementById("estado").value.trim();
+
+  // Verificando se todos os campos estão preenchidos
+  if (
+    !nome ||
+    !cpf ||
+    !telefone ||
+    !cep ||
+    !rua ||
+    !numero ||
+    !complemento ||
+    !bairro ||
+    !cidade ||
+    !estado
+  ) {
+    alert("Por favor, prencha todos os campos");
+    return;
+  }
+
+  if (!isValidName(nome)) {
+    alert("O nome deve conter apenas letras e espaços");
+  }
+  if (!isValidCpf(cpf)) {
+    alert("O CPF deve conter 11 dígitos numéricos");
+  }
+  if (!isValidPhone(phone)) {
+    alert("O Telefone deve conter 11 dígitos numéricos");
+  }
+  if (!isValidCEP(cep)) {
+    alert("O CEP deve conter 8 dígitos numéricos");
+  }
+  if (!isValidState(state)) {
+    alert("O Estado deve ser uma sigla de letras maiúsculas");
+
+    // Adicionar evento de submissão do formulário
+    document.getElementById("formulario");
+    formulario.addEventListener("submit", validarEGuardarFormulario);
+  }
 }
