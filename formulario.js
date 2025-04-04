@@ -83,7 +83,7 @@ function validarEGuardarFormulario(event) {
   if (!isValidCpf(cpf)) {
     alert("O CPF deve conter 11 dígitos numéricos");
   }
-  if (!isValidPhone(phone)) {
+  if (!isValidPhone(telefone)) {
     alert("O Telefone deve conter 11 dígitos numéricos");
   }
   if (!isValidCEP(cep)) {
@@ -91,9 +91,9 @@ function validarEGuardarFormulario(event) {
   }
   if (!isValidState(estado)) {
     alert("O Estado deve ser uma sigla de letras maiúsculas");
-
-    // Adicionar evento de submissão do formulário
-    document.getElementById("formulario");
-    formulario.addEventListener("submit", validarEGuardarFormulario);
   }
 }
+
+// Adicionar evento de submissão do formulário
+document.getElementById("formulario");
+formulario.addEventListener("submit", validarEGuardarFormulario);
