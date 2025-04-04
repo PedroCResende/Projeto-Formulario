@@ -89,7 +89,7 @@ function validarEGuardarFormulario(event) {
   if (!isValidCEP(cep)) {
     alert("O CEP deve conter 8 dígitos numéricos");
   }
-  if (!isValidState(state)) {
+  if (!isValidState(estado)) {
     alert("O Estado deve ser uma sigla de letras maiúsculas");
 
     // Adicionar evento de submissão do formulário
