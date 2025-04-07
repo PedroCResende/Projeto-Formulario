@@ -92,6 +92,10 @@ function validarEGuardarFormulario(event) {
   if (!isValidState(estado)) {
     alert("O Estado deve ser uma sigla de letras maiúsculas");
   }
+
+  // Se tudo estiver correto, salvar dados no localStorage
+  const dadosFormulario {}
+
 }
 
 // Adicionar evento de submissão do formulário
