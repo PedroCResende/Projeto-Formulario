@@ -94,7 +94,10 @@ function validarEGuardarFormulario(event) {
   }
 
   // Se tudo estiver correto, salvar dados no localStorage
-  const dadosFormulario {}
+  const dadosFormulario {
+    nome: nome, 
+  };
+  
 
 }
 
