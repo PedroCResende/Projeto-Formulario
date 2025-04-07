@@ -1,3 +1,6 @@
+// Dados formulário
+const formulario = document.getElementById("formulario");
+
 // Função para verificar se o valor contém apenas letras e espaços (validação para o campo Nome)
 function isValidName(string) {
   for (let index = 0; index < string.length; index++) {
@@ -18,23 +21,21 @@ function isValidName(string) {
 }
 
 // Função para validar o CPF (11 digitos numéricos)
-
 function isValidCpf(cpf) {
   return cpf.length === 11 && !isNaN(cpf);
 }
 
 // Função para validar o telefone (11 digitos numéricos)
-
 function isValidPhone(phone) {
   return phone.length === 11 && !isNaN(phone);
 }
+
 // Função para validar o CEP (8 digitos numéricos)
 function isValidCEP(cep) {
   return cep.length === 8 && !isNaN(cep);
 }
 
 // Função para validar o estado (2 digitos e letra maiúscula)
-
 function isValidState(state) {
   return (
     state.length === 2 &&
@@ -73,34 +74,49 @@ function validarEGuardarFormulario(event) {
     !cidade ||
     !estado
   ) {
-    alert("Por favor, prencha todos os campos");
-    return;
+    alert("Por favor, preencha todos os campos");
+    return; // Interrompe a execução
   }
 
   if (!isValidName(nome)) {
     alert("O nome deve conter apenas letras e espaços");
+    return; // Interrompe a execução
   }
   if (!isValidCpf(cpf)) {
     alert("O CPF deve conter 11 dígitos numéricos");
+    return; // Interrompe a execução
   }
   if (!isValidPhone(telefone)) {
     alert("O Telefone deve conter 11 dígitos numéricos");
+    return; // Interrompe a execução
   }
   if (!isValidCEP(cep)) {
     alert("O CEP deve conter 8 dígitos numéricos");
+    return; // Interrompe a execução
   }
   if (!isValidState(estado)) {
     alert("O Estado deve ser uma sigla de letras maiúsculas");
+    return; // Interrompe a execução
   }
 
   // Se tudo estiver correto, salvar dados no localStorage
-  const dadosFormulario {
-    nome: nome, 
+  const dadosFormulario = {
+    nome,
+    cpf,
+    telefone,
+    cep,
+    rua,
+    numero,
+    complemento,
+    bairro,
+    cidade,
+    estado,
   };
-  
 
+  localStorage.setItem("dadosFormulario", JSON.stringify(dadosFormulario));
+  formulario.reset();
+  alert("Dados salvos com sucesso!");
 }
 
 // Adicionar evento de submissão do formulário
-document.getElementById("formulario");
 formulario.addEventListener("submit", validarEGuardarFormulario);
